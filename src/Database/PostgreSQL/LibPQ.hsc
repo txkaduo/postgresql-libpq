@@ -2383,52 +2383,52 @@ foreign import ccall        "libpq-fe.h PQconnectStart"
 foreign import ccall        "libpq-fe.h PQconnectPoll"
     c_PQconnectPoll :: Ptr PGconn ->IO CInt
 
-foreign import ccall unsafe "libpq-fe.h PQdb"
+foreign import ccall        "libpq-fe.h PQdb"
     c_PQdb :: Ptr PGconn -> IO CString
 
-foreign import ccall unsafe "libpq-fe.h PQuser"
+foreign import ccall        "libpq-fe.h PQuser"
     c_PQuser :: Ptr PGconn -> IO CString
 
-foreign import ccall unsafe "libpq-fe.h PQpass"
+foreign import ccall        "libpq-fe.h PQpass"
     c_PQpass :: Ptr PGconn -> IO CString
 
-foreign import ccall unsafe "libpq-fe.h PQhost"
+foreign import ccall        "libpq-fe.h PQhost"
     c_PQhost :: Ptr PGconn -> IO CString
 
-foreign import ccall unsafe "libpq-fe.h PQport"
+foreign import ccall        "libpq-fe.h PQport"
     c_PQport :: Ptr PGconn -> IO CString
 
-foreign import ccall unsafe "libpq-fe.h PQoptions"
+foreign import ccall        "libpq-fe.h PQoptions"
     c_PQoptions :: Ptr PGconn -> IO CString
 
-foreign import ccall unsafe "libpq-fe.h PQbackendPID"
+foreign import ccall        "libpq-fe.h PQbackendPID"
     c_PQbackendPID :: Ptr PGconn -> IO CInt
 
-foreign import ccall unsafe "libpq-fe.h PQconnectionNeedsPassword"
+foreign import ccall        "libpq-fe.h PQconnectionNeedsPassword"
     c_PQconnectionNeedsPassword :: Ptr PGconn -> IO CInt
 
-foreign import ccall unsafe "libpq-fe.h PQconnectionUsedPassword"
+foreign import ccall        "libpq-fe.h PQconnectionUsedPassword"
     c_PQconnectionUsedPassword :: Ptr PGconn -> IO CInt
 
-foreign import ccall unsafe "libpq-fe.h PQstatus"
+foreign import ccall        "libpq-fe.h PQstatus"
     c_PQstatus :: Ptr PGconn -> IO CInt
 
-foreign import ccall unsafe "libpq-fe.h PQtransactionStatus"
+foreign import ccall        "libpq-fe.h PQtransactionStatus"
     c_PQtransactionStatus :: Ptr PGconn -> IO CInt
 
 foreign import ccall        "libpq-fe.h PQparameterStatus"
     c_PQparameterStatus :: Ptr PGconn -> CString -> IO CString
 
-foreign import ccall unsafe "libpq-fe.h PQprotocolVersion"
+foreign import ccall        "libpq-fe.h PQprotocolVersion"
     c_PQprotocolVersion :: Ptr PGconn -> IO CInt
 
-foreign import ccall unsafe "libpq-fe.h PQserverVersion"
+foreign import ccall        "libpq-fe.h PQserverVersion"
     c_PQserverVersion :: Ptr PGconn -> IO CInt
 
 foreign import ccall "dynamic"
     mkLibpqVersion :: FunPtr Int -> Int
 
-foreign import ccall unsafe "libpq-fe.h PQsocket"
+foreign import ccall        "libpq-fe.h PQsocket"
     c_PQsocket :: Ptr PGconn -> IO CInt
 
 foreign import ccall        "libpq-fe.h PQerrorMessage"
@@ -2451,7 +2451,7 @@ foreign import ccall        "libpq-fe.h PQresetStart"
 foreign import ccall        "libpq-fe.h PQresetPoll"
     c_PQresetPoll :: Ptr PGconn ->IO CInt
 
-foreign import ccall unsafe "libpq-fe.h PQclientEncoding"
+foreign import ccall        "libpq-fe.h PQclientEncoding"
     c_PQclientEncoding :: Ptr PGconn -> IO CInt
 
 foreign import ccall        "libpq-fe.h pg_encoding_to_char"
@@ -2461,7 +2461,7 @@ foreign import ccall        "libpq-fe.h PQsetClientEncoding"
     c_PQsetClientEncoding :: Ptr PGconn -> CString -> IO CInt
 
 type PGVerbosity = CInt
-foreign import ccall unsafe "libpq-fe.h PQsetErrorVerbosity"
+foreign import ccall        "libpq-fe.h PQsetErrorVerbosity"
     c_PQsetErrorVerbosity :: Ptr PGconn -> PGVerbosity -> IO PGVerbosity
 
 foreign import ccall        "libpq-fe.h PQputCopyData"
@@ -2507,22 +2507,22 @@ foreign import ccall        "libpq-fe.h &PQfreeCancel"
 foreign import ccall        "libpq-fe.h PQcancel"
     c_PQcancel :: Ptr PGcancel -> CString -> CInt -> IO CInt
 
-foreign import ccall unsafe "libpq-fe.h PQnotifies"
+foreign import ccall        "libpq-fe.h PQnotifies"
     c_PQnotifies :: Ptr PGconn -> IO (Ptr Notify)
 
-foreign import ccall unsafe "libpq-fe.h PQconsumeInput"
+foreign import ccall        "libpq-fe.h PQconsumeInput"
     c_PQconsumeInput :: Ptr PGconn -> IO CInt
 
-foreign import ccall unsafe "libpq-fe.h PQisBusy"
+foreign import ccall        "libpq-fe.h PQisBusy"
     c_PQisBusy :: Ptr PGconn -> IO CInt
 
 foreign import ccall        "libpq-fe.h PQsetnonblocking"
     c_PQsetnonblocking :: Ptr PGconn -> CInt -> IO CInt
 
-foreign import ccall unsafe "libpq-fe.h PQisnonblocking"
+foreign import ccall        "libpq-fe.h PQisnonblocking"
     c_PQisnonblocking :: Ptr PGconn -> IO CInt
 
-foreign import ccall unsafe "libpq-fe.h PQsetSingleRowMode"
+foreign import ccall        "libpq-fe.h PQsetSingleRowMode"
     c_PQsetSingleRowMode :: Ptr PGconn -> IO CInt
 
 foreign import ccall        "libpq-fe.h PQgetResult"
@@ -2553,67 +2553,67 @@ foreign import ccall        "libpq-fe.h PQdescribePortal"
 foreign import ccall        "libpq-fe.h &PQclear"
     p_PQclear :: FunPtr (Ptr PGresult ->IO ())
 
-foreign import ccall unsafe "libpq-fe.h PQresultStatus"
+foreign import ccall        "libpq-fe.h PQresultStatus"
     c_PQresultStatus :: Ptr PGresult -> IO CInt
 
-foreign import ccall unsafe "libpq-fe.h PQresStatus"
+foreign import ccall        "libpq-fe.h PQresStatus"
     c_PQresStatus :: CInt -> IO CString
 
-foreign import ccall unsafe "libpq-fe.h PQresultErrorMessage"
+foreign import ccall        "libpq-fe.h PQresultErrorMessage"
     c_PQresultErrorMessage :: Ptr PGresult -> IO CString
 
 foreign import ccall        "libpq-fe.h PQresultErrorField"
     c_PQresultErrorField :: Ptr PGresult -> CInt -> IO CString
 
-foreign import ccall unsafe "libpq-fe.h PQntuples"
+foreign import ccall        "libpq-fe.h PQntuples"
     c_PQntuples :: Ptr PGresult -> CInt
 
-foreign import ccall unsafe "libpq-fe.h PQnfields"
+foreign import ccall        "libpq-fe.h PQnfields"
     c_PQnfields :: Ptr PGresult -> CInt
 
-foreign import ccall unsafe "libpq-fe.h PQfname"
+foreign import ccall        "libpq-fe.h PQfname"
     c_PQfname :: Ptr PGresult -> CInt -> IO CString
 
-foreign import ccall unsafe "libpq-fe.h PQfnumber"
+foreign import ccall        "libpq-fe.h PQfnumber"
     c_PQfnumber :: Ptr PGresult -> CString -> IO CInt
 
-foreign import ccall unsafe "libpq-fe.h PQftable"
+foreign import ccall        "libpq-fe.h PQftable"
     c_PQftable :: Ptr PGresult -> CInt -> IO Oid
 
-foreign import ccall unsafe "libpq-fe.h PQftablecol"
+foreign import ccall        "libpq-fe.h PQftablecol"
     c_PQftablecol :: Ptr PGresult -> CInt -> IO CInt
 
-foreign import ccall unsafe "libpq-fe.h PQfformat"
+foreign import ccall        "libpq-fe.h PQfformat"
     c_PQfformat :: Ptr PGresult -> CInt -> IO CInt
 
-foreign import ccall unsafe "libpq-fe.h PQftype"
+foreign import ccall        "libpq-fe.h PQftype"
     c_PQftype :: Ptr PGresult -> CInt -> IO Oid
 
-foreign import ccall unsafe "libpq-fe.h PQfmod"
+foreign import ccall        "libpq-fe.h PQfmod"
     c_PQfmod :: Ptr PGresult -> CInt -> IO CInt
 
-foreign import ccall unsafe "libpq-fe.h PQfsize"
+foreign import ccall        "libpq-fe.h PQfsize"
     c_PQfsize :: Ptr PGresult -> CInt -> IO CInt
 
-foreign import ccall unsafe "libpq-fe.h PQgetvalue"
+foreign import ccall        "libpq-fe.h PQgetvalue"
     c_PQgetvalue :: Ptr PGresult -> CInt -> CInt -> IO CString
 
-foreign import ccall unsafe "libpq-fe.h PQgetisnull"
+foreign import ccall        "libpq-fe.h PQgetisnull"
     c_PQgetisnull :: Ptr PGresult -> CInt -> CInt -> IO CInt
 
-foreign import ccall unsafe "libpq-fe.h PQgetlength"
+foreign import ccall        "libpq-fe.h PQgetlength"
     c_PQgetlength :: Ptr PGresult -> CInt -> CInt -> IO CInt
 
-foreign import ccall unsafe "libpq-fe.h PQnparams"
+foreign import ccall        "libpq-fe.h PQnparams"
     c_PQnparams :: Ptr PGresult -> IO CInt
 
-foreign import ccall unsafe "libpq-fe.h PQparamtype"
+foreign import ccall        "libpq-fe.h PQparamtype"
     c_PQparamtype :: Ptr PGresult -> CInt -> IO Oid
 
-foreign import ccall unsafe "libpq-fe.h PQcmdStatus"
+foreign import ccall        "libpq-fe.h PQcmdStatus"
     c_PQcmdStatus :: Ptr PGresult -> IO CString
 
-foreign import ccall unsafe "libpq-fe.h PQcmdTuples"
+foreign import ccall        "libpq-fe.h PQcmdTuples"
     c_PQcmdTuples :: Ptr PGresult -> IO CString
 
 foreign import ccall        "libpq-fe.h PQescapeStringConn"
@@ -2636,34 +2636,34 @@ foreign import ccall        "libpq-fe.h PQunescapeBytea"
                       -> Ptr CSize
                       -> IO (Ptr Word8) -- Actually (IO (Ptr CUChar))
 
-foreign import ccall unsafe "libpq-fe.h PQescapeIdentifier"
+foreign import ccall        "libpq-fe.h PQescapeIdentifier"
     c_PQescapeIdentifier :: Ptr PGconn
                          -> CString
                          -> CSize
                          -> IO CString
 
-foreign import ccall unsafe "libpq-fe.h &PQfreemem"
+foreign import ccall        "libpq-fe.h &PQfreemem"
     p_PQfreemem :: FunPtr (Ptr a -> IO ())
 
-foreign import ccall unsafe "libpq-fe.h PQfreemem"
+foreign import ccall        "libpq-fe.h PQfreemem"
     c_PQfreemem :: Ptr a -> IO ()
 
-foreign import ccall unsafe "noticehandlers.h hs_postgresql_libpq_malloc_noticebuffer"
+foreign import ccall        "noticehandlers.h hs_postgresql_libpq_malloc_noticebuffer"
     c_malloc_noticebuffer :: IO (Ptr CNoticeBuffer)
 
-foreign import ccall unsafe "noticehandlers.h hs_postgresql_libpq_free_noticebuffer"
+foreign import ccall        "noticehandlers.h hs_postgresql_libpq_free_noticebuffer"
     c_free_noticebuffer :: Ptr CNoticeBuffer -> IO ()
 
-foreign import ccall unsafe "noticehandlers.h hs_postgresql_libpq_get_notice"
+foreign import ccall        "noticehandlers.h hs_postgresql_libpq_get_notice"
     c_get_notice :: Ptr CNoticeBuffer -> IO (Ptr PGnotice)
 
-foreign import ccall unsafe "noticehandlers.h &hs_postgresql_libpq_discard_notices"
+foreign import ccall        "noticehandlers.h &hs_postgresql_libpq_discard_notices"
     p_discard_notices :: FunPtr NoticeReceiver
 
-foreign import ccall unsafe "noticehandlers.h &hs_postgresql_libpq_store_notices"
+foreign import ccall        "noticehandlers.h &hs_postgresql_libpq_store_notices"
     p_store_notices :: FunPtr NoticeReceiver
 
-foreign import ccall unsafe "libpq-fe.h PQsetNoticeReceiver"
+foreign import ccall        "libpq-fe.h PQsetNoticeReceiver"
     c_PQsetNoticeReceiver :: Ptr PGconn -> FunPtr NoticeReceiver -> Ptr CNoticeBuffer -> IO (FunPtr NoticeReceiver)
 
 
